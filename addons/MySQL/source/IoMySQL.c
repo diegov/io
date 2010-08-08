@@ -112,6 +112,8 @@ IoObject* IoMySQL_connect(IoObject* self, IoObject* locals, IoMessage* m) {
 		mysql_close(&DATA(self)->connection);
 		DATA(self)->connected = 0;
 	}
+
+	mysql_options(&DATA(self)->connection, MYSQL_READ_DEFAULT_GROUP, "IoMySQL");
 	
 	if(mysql_real_connect(
 		&DATA(self)->connection,
