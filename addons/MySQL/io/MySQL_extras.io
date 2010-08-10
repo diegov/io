@@ -7,7 +7,7 @@ MySQL do(
 	password ::= nil
 	name ::= nil
 	port ::= nil 
-	socket ::= "/tmp/mysql.sock"
+	socket ::= nil
 
 	tableNames := method(query("SHOW tables") flatten)
 
